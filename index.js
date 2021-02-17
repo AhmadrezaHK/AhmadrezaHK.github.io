@@ -20,7 +20,7 @@ navigator.serviceWorker.register("/sw.js").then((registration) => {
   messaging.onMessage((payload) => {
     console.log("ForgroundMessage", payload);
     return registration.showNotification(payload.notification.title, {
-      body: payload.notification.body,
+      body: payload.notification.body + " forground-message",
     });
   });
 });

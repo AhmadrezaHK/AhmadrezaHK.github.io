@@ -56,6 +56,8 @@ firebase.initializeApp({
 // eslint-disable-next-line no-undef
 const messaging = firebase.messaging();
 
-messaging.setBackgroundMessageHandler((payload) => {
-  console.log("asdfsfsdafsd");
+messaging.setBackgroundMessageHandler(({ notification }) => {
+  return self.registration.showNotification(notification.title, {
+    body: notification.body,
+  });
 });

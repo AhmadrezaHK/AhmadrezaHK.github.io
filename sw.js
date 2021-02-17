@@ -42,7 +42,7 @@
 // });
 
 importScripts("https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/8.2.7/firebase-messaging.j");
+importScripts("https://www.gstatic.com/firebasejs/8.2.7/firebase-messaging.js");
 
 firebase.initializeApp({
   apiKey: "AIzaSyC5KQoqzq1eYFTY3TKUhpLxxz-JxbHK5Y0",

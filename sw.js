@@ -1,7 +1,7 @@
-// self.addEventListener("install", (event) => {
-//   event.waitUntil(self.skipWaiting().then(() => null));
-//   console.log("INSTALLED EVENT");
-// });
+self.addEventListener("install", (event) => {
+  event.waitUntil(self.skipWaiting().then(() => null));
+  console.log("INSTALLED EVENT");
+});
 
 // self.addEventListener("activate", (event) => {
 //   console.log("ACTIAVTE EVENT");

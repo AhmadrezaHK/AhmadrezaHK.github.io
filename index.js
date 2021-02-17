@@ -20,9 +20,10 @@ navigator.serviceWorker
       .then((token) => {
         console.log(token);
       });
-    messaging.onMessage(({ notification }) => {
-      return registration.showNotification(notification.title, {
-        body: notification.body,
+    messaging.onMessage((payload) => {
+      console.log("ForgroundMessage");
+      return registration.showNotification(payload.notification.title, {
+        body: payload.notification.body,
       });
     });
   });

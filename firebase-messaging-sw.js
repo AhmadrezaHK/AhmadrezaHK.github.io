@@ -56,8 +56,9 @@ firebase.initializeApp({
 // eslint-disable-next-line no-undef
 const messaging = firebase.messaging();
 
-messaging.setBackgroundMessageHandler(({ notification }) => {
-  return self.registration.showNotification(notification.title, {
-    body: notification.body,
+messaging.setBackgroundMessageHandler((payload) => {
+  console.log("BackgroundMessage");
+  return self.registration.showNotification(payload.notification.title, {
+    body: payload.notification.body,
   });
 });

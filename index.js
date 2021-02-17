@@ -1,5 +1,4 @@
 Notification.requestPermission();
-let registeration = await navigator.serviceWorker.register("/sw.js");
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -13,4 +12,6 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
-messaging.useServiceWorker(registeration);
+navigator.serviceWorker.register("/sw.js").then((registeration) => {
+  messaging.useServiceWorker(registeration);
+});

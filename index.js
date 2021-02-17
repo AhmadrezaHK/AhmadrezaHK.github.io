@@ -13,7 +13,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 navigator.serviceWorker.register("/sw.js").then((registration) => {
-  //   messaging.useServiceWorker(registration);
+  messaging.useServiceWorker(registration);
   messaging
     .getToken({
       serviceWorkerRegistration: registration,

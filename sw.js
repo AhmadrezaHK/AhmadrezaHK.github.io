@@ -7,23 +7,23 @@ self.addEventListener("install", (event) => {
 //   console.log("ACTIAVTE EVENT");
 // });
 
-// self.addEventListener("push", (event) => {
-//   console.log("PUSH EVENT", event);
-//   self.registration.showNotification("notification title", {
-//     body: "notification body",
-//     requireInteraction: true,
-//     actions: [
-//       {
-//         title: "yesss",
-//         action: "A",
-//       },
-//       {
-//         title: "noooo",
-//         action: "B",
-//       },
-//     ],
-//   });
-// });
+self.addEventListener("push", (event) => {
+  console.log("PUSH EVENT", event);
+  // self.registration.showNotification("notification title", {
+  //   body: "notification body",
+  //   requireInteraction: true,
+  //   actions: [
+  //     {
+  //       title: "yesss",
+  //       action: "A",
+  //     },
+  //     {
+  //       title: "noooo",
+  //       action: "B",
+  //     },
+  //   ],
+  // });
+});
 
 // self.addEventListener("notificationclick", (event) => {
 //   console.log("NOTIFICATION CLICK EVENT", event.action);

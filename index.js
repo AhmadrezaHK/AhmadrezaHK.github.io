@@ -12,7 +12,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
-navigator.serviceWorker.register("/sw1.js").then((registration) => {
+navigator.serviceWorker.register("/sw.js").then((registration) => {
   messaging.useServiceWorker(registration);
   messaging.getToken().then((token) => {
     console.log(token);

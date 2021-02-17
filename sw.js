@@ -60,5 +60,6 @@ messaging.setBackgroundMessageHandler((payload) => {
   console.log("BackgroundMessage", payload);
   return self.registration.showNotification(payload.notification.title, {
     body: payload.notification.body + " background-message",
+    requireInteraction: true,
   });
 });

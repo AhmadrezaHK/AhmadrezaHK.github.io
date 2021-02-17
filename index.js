@@ -12,18 +12,16 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
-navigator.serviceWorker
-  .register("/firebase-messaging-sw.js")
-  .then((registration) => {
-    messaging
-      .getToken({ serviceWorkerRegistration: registration })
-      .then((token) => {
-        console.log(token);
-      });
-    messaging.onMessage((payload) => {
-      console.log("ForgroundMessage", payload);
-      return registration.showNotification(payload.notification.title, {
-        body: payload.notification.body,
-      });
+navigator.serviceWorker.register("/sw.js").then((registration) => {
+  messaging
+    .getToken({ serviceWorkerRegistration: registration })
+    .then((token) => {
+      console.log(token);
+    });
+  messaging.onMessage((payload) => {
+    console.log("ForgroundMessage", payload);
+    return registration.showNotification(payload.notification.title, {
+      body: payload.notification.body,
     });
   });
+});

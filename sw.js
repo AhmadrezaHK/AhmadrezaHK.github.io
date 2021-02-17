@@ -8,7 +8,7 @@ self.addEventListener("install", (event) => {
 // });
 
 self.addEventListener("push", (event) => {
-  // console.log("PUSH EVENT", event);
+  console.log("PUSH EVENT", event);
   console.log("BackgroundMessage", payload);
   event.waitUntil(
     self.registration.showNotification(payload.notification.title, {

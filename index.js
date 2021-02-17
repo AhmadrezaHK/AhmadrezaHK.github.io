@@ -13,10 +13,16 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 navigator.serviceWorker.register("/sw.js").then((registration) => {
-  messaging.useServiceWorker(registration);
-  messaging.getToken().then((token) => {
-    console.log(token);
-  });
+  //   messaging.useServiceWorker(registration);
+  messaging
+    .getToken({
+      serviceWorkerRegistration: registration,
+      vapidKey:
+        "BMtiPD8hSaVOUu0p-rsRL0ldm5a6_935u2FS4eOMu1x7u6oCsRC5NgFCJ8dCce_b36wIB9q8fHWQljSzln8e38g",
+    })
+    .then((token) => {
+      console.log(token);
+    });
   messaging.onMessage((payload) => {
     console.log("ForgroundMessage", payload);
     return registration.showNotification(payload.notification.title, {

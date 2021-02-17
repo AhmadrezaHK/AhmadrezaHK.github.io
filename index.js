@@ -1,5 +1,5 @@
 Notification.requestPermission();
-let registeration = navigator.serviceWorker.register("/sw.js");
+let registeration = await navigator.serviceWorker.register("/sw.js");
 
 // Your web app's Firebase configuration
 var firebaseConfig = {

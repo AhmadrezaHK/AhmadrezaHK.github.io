@@ -67,7 +67,7 @@ const messaging = firebase.messaging();
 messaging.onBackgroundMessage((payload) => {
   console.log("BackgroundMessage", payload);
   return self.registration.showNotification(payload.notification.title, {
-    body: "background-message",
+    body: payload.notification.body + "background-message",
     requireInteraction: true,
   });
 });

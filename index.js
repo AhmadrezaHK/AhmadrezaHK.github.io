@@ -10,7 +10,7 @@ var firebaseConfig = {
   appId: "1:406353635928:web:cf176a3ea8ed0d1c5df82d",
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 navigator.serviceWorker.register("/sw.js").then((registration) => {
   //   messaging.useServiceWorker(registration);

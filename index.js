@@ -21,7 +21,7 @@ navigator.serviceWorker
         console.log(token);
       });
     messaging.onMessage((payload) => {
-      console.log("ForgroundMessage");
+      console.log("ForgroundMessage", payload);
       return registration.showNotification(payload.notification.title, {
         body: payload.notification.body,
       });

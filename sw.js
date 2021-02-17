@@ -41,16 +41,16 @@
 //   console.log("subs changed", event);
 // });
 
-importScripts("https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/8.2.7/firebase-messaging.js");
+importScripts("https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/6.6.2/firebase-messaging.js");
 
 firebase.initializeApp({
-  apiKey: "AIzaSyC5KQoqzq1eYFTY3TKUhpLxxz-JxbHK5Y0",
-  authDomain: "front-chapter.firebaseapp.com",
-  projectId: "front-chapter",
-  storageBucket: "front-chapter.appspot.com",
+  // apiKey: "AIzaSyC5KQoqzq1eYFTY3TKUhpLxxz-JxbHK5Y0",
+  // authDomain: "front-chapter.firebaseapp.com",
+  // projectId: "front-chapter",
+  // storageBucket: "front-chapter.appspot.com",
   messagingSenderId: "406353635928",
-  appId: "1:406353635928:web:cf176a3ea8ed0d1c5df82d",
+  // appId: "1:406353635928:web:cf176a3ea8ed0d1c5df82d",
 });
 
 // eslint-disable-next-line no-undef

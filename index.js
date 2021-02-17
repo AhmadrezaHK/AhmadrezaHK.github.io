@@ -14,10 +14,15 @@ firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 navigator.serviceWorker
   .register("/firebase-messaging-sw.js")
-  .then((registeration) => {
+  .then((registration) => {
     messaging
-      .getToken({ serviceWorkerRegistration: registeration })
+      .getToken({ serviceWorkerRegistration: registration })
       .then((token) => {
         console.log(token);
       });
+    messaging.onMessage(({ notification }) => {
+      return registration.showNotification(notification.title, {
+        body: notification.body,
+      });
+    });
   });

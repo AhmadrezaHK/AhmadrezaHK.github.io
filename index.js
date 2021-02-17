@@ -15,8 +15,9 @@ const messaging = firebase.messaging();
 navigator.serviceWorker
   .register("/firebase-messaging-sw.js")
   .then((registeration) => {
-    messaging.useServiceWorker(registeration);
+    messaging
+      .getToken({ serviceWorkerRegistration: registeration })
+      .then((token) => {
+        console.log(token);
+      });
   });
-messaging.getToken((token) => {
-  console.log(token);
-});
